@@ -55,6 +55,7 @@ typedef struct
 } VM3011_t;
 
 esp_err_t VM3011_init_desc(VM3011_t *dev, uint8_t addr, i2c_port_t port, gpio_num_t sda_gpio, gpio_num_t scl_gpio);
+esp_err_t VM3011_free_desc(MC3630_t *dev);
 uint8_t VM3011_get_ambient(VM3011_t *dev);
 void VM3011_set_WOS_THRESH(VM3011_t *dev, VM3011_WOS_THRESH_t thres);
 void VM3011_set_WOS_Filter(VM3011_t *dev, VM3011_WOS_FILTER_LP_t lp_freq, VM3011_WOS_FILTER_HP_t hp_freq);

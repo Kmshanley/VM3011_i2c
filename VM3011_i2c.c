@@ -20,6 +20,11 @@ esp_err_t VM3011_init_desc(VM3011_t *dev, uint8_t addr, i2c_port_t port, gpio_nu
     return i2c_dev_create_mutex(&dev->i2c_dev);
 }
 
+esp_err_t VM3011_free_desc(bme680_t *dev)
+{
+    return i2c_dev_delete_mutex(&dev->i2c_dev);
+}
+
 uint8_t VM3011_get_ambient(VM3011_t *dev)
 {
     uint8_t data;
